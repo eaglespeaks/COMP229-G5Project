@@ -1,0 +1,37 @@
+<%- include('partials/header'); %>
+
+<%- include('partials/main_nav.ejs'); %>
+
+
+  <section class="home d-flex flex-column align-items-center justify-content-center">
+    <div class="text-center">
+      <h1 class="h1 text-gold fw-medium fst-italic fw-bold">Welcome to G5 Surveys</h1>
+      <h2 class="typing display-3 text-peach fw-bold"> </h2>
+      
+    </div>
+  </section>
+
+
+  <% if (title == "About"){ %>
+    <%- include about.ejs %>
+  <% } %>
+
+  <% if (title == "Projects"){ %>
+    <%- include projects.ejs %>
+  <% } %>
+
+  <% if (title == "Services"){ %>
+    <%- include services.ejs %>
+  <% } %>
+
+  <% if (title == "Surveys"){ %>
+    <%- include list.ejs %>
+  <% } %>
+
+  <% if (title == "Contact Us"){ %>
+    <%- include contact.ejs %>
+  <% } %>
+
+<%- include('partials/bottom_nav.ejs'); %>
+  
+<%- include('partials/footer'); %>

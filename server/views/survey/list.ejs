@@ -1,0 +1,50 @@
+<%- include('../partials/header'); %>
+
+<%- include('../partials/main_nav.ejs'); %>
+
+<main class="container">
+    <div class="row">
+        <div class="col-md-offset col-md-11">
+            <h1>Surveys</h1>
+            <a href="/survey_list/add" class="btn btn-primary" role="button">
+                <i class="fas fa-plus-circle"></i> Add a Survey
+            </a>
+            <br>
+            <table class="table table-bordered table-striped table-hover">
+                <!--Header Row-->
+                <tr>
+                    <th class="text-center col-2">Name</th>
+                    <th class="text-center col-2">Owner</th>
+                    <th class="text-center col-1">Released</th>
+                    <th class="text-center">Description</th>
+                    <th class="text-center col-1">Status</th>
+                    <th class="text-center col-1"></th>
+                    <th class="text-center col-1"></th>
+                </tr>
+
+                <!--Repeatable Template-->
+                <% for(let count = 0; count < SurveyList.length; count++) {%>
+                    <tr>
+                        <td class="text-center"><%= SurveyList[count].Name %></td>
+                        <td class="text-center"><%= SurveyList[count].Owner %></td>
+                        <td class="text-center"><%= SurveyList[count].Released %></td>
+                        <td class="text-center"><%= SurveyList[count].Description %></td>
+                        <td class="text-center"><%= SurveyList[count].Status %></td>
+                        <td class="text-center">
+                            <a href="/survey_list/edit<%=SurveyList[count]._id %>" class="btn btn-primary btn-sm">
+                            <i class="fas fa-pencil-alt"></i> Edit </a>
+                        </td>
+                        <td class="text-center">
+                            <a href="/survey_list/delete/<%=SurveyList[count]._id %>" class="btn btn-danger btn-sm">
+                                <i class="fas fa-trash-alt"></i> Delete </a>
+                        </td>
+                    </tr>
+                <% } %>
+            </table>
+        </div>
+    </div>
+</main>  
+
+<%- include('../partials/bottom_nav.ejs'); %>
+
+<%- include('../partials/footer'); %>

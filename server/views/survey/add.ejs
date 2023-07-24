@@ -1,0 +1,78 @@
+<%- include('../partials/header'); %>
+
+<%- include('../partials/main_nav.ejs'); %>
+
+
+<!-- Content for the Add Page -->
+<div class="container">
+    <div class="row">
+        <div class="offset-md-3 col-md-6">
+            <h1>Add a Survey</h1>
+            <form class="form" method="POST">
+                <div class="form-group">
+                    <label for="nameTextField">Survey Name</label>
+                    <input type="text" class="form-control"
+                    id="nameTextField"
+                    placeholder="Enter the Survey Name"
+                    name="name" 
+                    value="<%= user.Name %>"
+                    required>
+                </div>
+
+                <div class="form-group">
+                    <label for="createdTextField">Owner</label>
+                    <input type="text" class="form-control"
+                    id="ownerTextField"
+                    placeholder="Enter the Survey's owner"
+                    name="owner" 
+                    value="<%= user.Owner %>"
+                    required>
+                </div>
+
+                <div class="form-group">
+                    <label for="releasedTextField">Released</label>
+                    <input type="text" class="form-control"
+                    id="releasedTextField"
+                    placeholder="Enter the Year of Release"
+                    name="released" 
+                    value="<%= user.Released %>"
+                    required>
+                </div>
+
+                <div class="form-group">
+                    <label for="descriptionTextField">Description</label>
+                    <input type="text" class="form-control"
+                    id="descriptionTextField"
+                    placeholder="Enter the description of the Survey"
+                    name="description" <%= user.Description %> required>
+                </div>
+
+                <div class="form-group">
+                    <label for="nameTextField">Status</label>
+                    <input type="text" class="form-control"
+                    id="statusTextField"
+                    placeholder="Enter the Survey's status"
+                    name="status" 
+                    value="<%= Survey.Status %>"
+                    required>
+                </div>
+
+                <br>
+                <button class="btn btn-primary" type="submit">
+                    <i class="fas fa-edit"></i> Submit</button>
+
+                    <a href="/survey_list" class="btn btn-warning">
+                        <i class="fas fa-undo"></i> Cancel</a>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+<%- include('../partials/bottom_nav.ejs'); %>
+
+<%- include('../partials/footer'); %>
