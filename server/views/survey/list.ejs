@@ -31,11 +31,11 @@
                         <td class="text-center"><%= SurveyList[count].Description %></td>
                         <td class="text-center"><%= SurveyList[count].Status %></td>
                         <td class="text-center">
-                            <a href="/survey_list/edit<%=SurveyList[count]._id %>" class="btn btn-primary btn-sm">
+                            <a href="/survey_list/edit<%= SurveyList[count]._id %>" class="btn btn-primary btn-sm">
                             <i class="fas fa-pencil-alt"></i> Edit </a>
                         </td>
                         <td class="text-center">
-                            <a href="/survey_list/delete/<%=SurveyList[count]._id %>" class="btn btn-danger btn-sm">
+                            <a href="/survey_list/delete/<%= SurveyList[count]._id %>" class="btn btn-danger btn-sm">
                                 <i class="fas fa-trash-alt"></i> Delete </a>
                         </td>
                     </tr>

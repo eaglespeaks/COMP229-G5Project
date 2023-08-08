@@ -7,7 +7,7 @@
 <div class="container">
     <div class="row">
         <div class="offset-md-3 col-md-6">
-            <h1>Add a Survey</h1>
+            <h1><%= title %></h1>
             <form class="form" method="POST">
                 <div class="form-group">
                     <label for="nameTextField">Survey Name</label>
@@ -15,7 +15,6 @@
                     id="nameTextField"
                     placeholder="Enter the Survey Name"
                     name="name" 
-                    value="<%= user.Name %>"
                     required>
                 </div>
 
@@ -25,7 +24,6 @@
                     id="ownerTextField"
                     placeholder="Enter the Survey's owner"
                     name="owner" 
-                    value="<%= user.Owner %>"
                     required>
                 </div>
 
@@ -35,7 +33,6 @@
                     id="releasedTextField"
                     placeholder="Enter the Year of Release"
                     name="released" 
-                    value="<%= user.Released %>"
                     required>
                 </div>
 
@@ -44,7 +41,8 @@
                     <input type="text" class="form-control"
                     id="descriptionTextField"
                     placeholder="Enter the description of the Survey"
-                    name="description" <%= user.Description %> required>
+                    name="description"
+                    required>
                 </div>
 
                 <div class="form-group">
@@ -53,7 +51,6 @@
                     id="statusTextField"
                     placeholder="Enter the Survey's status"
                     name="status" 
-                    value="<%= Survey.Status %>"
                     required>
                 </div>
 

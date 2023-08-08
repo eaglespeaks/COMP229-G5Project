@@ -35,7 +35,7 @@ module.exports.processAddPage = async (req, res, next) =>{
 
     try{
         await newSurvey.save();
-        res.redirect('/survey_list');
+        res.render('/survey_list');
     } catch (err) {
         console.log(err);
         res.status(500).send(err);
@@ -47,7 +47,7 @@ module.exports.displayEditPage = async (req, res, next) =>{
 
     try{
         let surveyToEdit = await Survey.findById(id);
-        res.redirect('survey/edit', {title: 'Edit Survey', survey: surveyToEdit});
+        res.render('survey/edit', {title: 'Edit Survey', survey: surveyToEdit});
     } catch (err) {
         console.log(err);
         res.status(500).send(err);
