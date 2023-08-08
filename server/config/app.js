@@ -4,6 +4,8 @@ let path = require('path');
 let cookieParser = require('cookie-parser');
 let logger = require('morgan');
 
+//modules for authentication
+
 // database setup
 let mongoose = require('mongoose');
 let DB = require('./db');
