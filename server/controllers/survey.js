@@ -10,7 +10,10 @@ module.exports.displaySurveyList = async (req, res, next) =>{
         let surveyList = await Survey.find();
         //console.log(surveyList)
 
-        res.render('survey/list', {title: 'Surveys', SurveyList: surveyList})
+        res.render('survey/list', {
+            title: 'Surveys',
+            SurveyList: surveyList,
+            displayName: req.user ? req.user.displayName : ''})
     } catch (err) {
         console.error(err);
     }
@@ -18,7 +21,9 @@ module.exports.displaySurveyList = async (req, res, next) =>{
 
 module.exports.displayAddPage = async (req, res, next) =>{
     try {
-        res.render('survey/add', {title: 'Add Survey'})
+        res.render('survey/add', {
+            title: 'Add Survey',
+            displayName: req.user ? req.user.displayName : ''})
     } catch (err) {
         console.error(err);
     }
@@ -47,7 +52,10 @@ module.exports.displayEditPage = async (req, res, next) =>{
 
     try{
         let surveyToEdit = await Survey.findById(id);
-        res.redirect('survey/edit', {title: 'Edit Survey', survey: surveyToEdit});
+        res.redirect('survey/edit', {
+            title: 'Edit Survey',
+            survey: surveyToEdit,
+            displayName: req.user ? req.user.displayName : ''});
     } catch (err) {
         console.log(err);
         res.status(500).send(err);
